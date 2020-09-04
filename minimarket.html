@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!--Navegación-->
+      <nav
+        class="navbar navbar-expand-sm navbar-light bg-light border shadow mb-3"
+      >
+        <a class="navbar-brand" href="index.html"
+          ><img src="img/logo.png" width="60" height="60" />
+          <h1 class="navbar-text small">Minimarket deToDo</h1>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          id="navbarContent"
+          class="collapse navbar-collapse justify-content-end"
+        >
+          <a class="nav-link text-center" href="index.html">Home</a>
+          <a class="nav-link text-center active" href="galeria.html">Galería</a>
+        </div>
+      </nav>
+      <!--/.Navegación-->
+
+      <div class="card-deck">
+        <div class="row">
+          <div class="col col-md-9">
+            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3">
+              <div class="col">
+                <div class="card">
+                  <div class="card-header">Santiago Centro</div>
+                  <img src="./img/mini1.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <h5 class="card-title">Tolca</h5>
+                    <p class="card-text">Contacto: Yo</p>
+                  </div>
+                  <div class="card-footer">
+                    <button id="item1" name="item1" type="primary">Add</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card">
+                  <div class="card-header">Ñuñoa</div>
+                  <img src="./img/mini2.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <h5 class="card-title">JM</h5>
+                    <p class="card-text">Contacto: Yo</p>
+                  </div>
+                  <div class="card-footer">
+                    <button id="item2" name="item2" type="primary">Add</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="card">
+                  <div class="card-header">Las Condes</div>
+                  <img src="./img/mini3.jpg" class="card-img-top" alt="..." />
+                  <div class="card-body">
+                    <h5 class="card-title">Mercar</h5>
+                    <p class="card-text">Contacto: Yo</p>
+                  </div>
+                  <div class="card-footer">
+                    <button id="item3" name="item3" type="primary">Add</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="boleta" class="col col-md-3"></div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(document).ready(() => {
+        var compra = [];
+        var productos = [
+          {
+            id: "item1",
+            name: "item1",
+            precio: 100,
+          },
+          {
+            id: "item2",
+            name: "item2",
+            precio: 100,
+          },
+        ];
+
+        var producto;
+        $("button").click(function () {
+          // $('#boleta').append(this.id);
+          console.log(this.id)
+          var filteredProduct = Object.keys(productos).filter(function (key) {
+            return (key.id == this.id)
+          });
+          compra.push(filteredProduct); 
+          debugger
+        });
+      });
+    </script>
+  </body>
+</html>
