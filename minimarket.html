@@ -14,7 +14,7 @@
   <body>
     <div class="container">
       <!--Navegación-->
-      <nav
+      <!-- <nav
         class="navbar navbar-expand-sm navbar-light bg-light border shadow mb-3"
       >
         <a class="navbar-brand" href="index.html"
@@ -36,10 +36,10 @@
           <a class="nav-link text-center" href="index.html">Home</a>
           <a class="nav-link text-center active" href="galeria.html">Galería</a>
         </div>
-      </nav>
+      </nav> -->
       <!--/.Navegación-->
 
-      <div class="card-deck">
+      <!-- <div class="card-deck">
         <div class="row">
           <div class="col col-md-9">
             <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3">
@@ -88,7 +88,33 @@
           </div>
           <div id="boleta" class="col col-md-3"></div>
         </div>
-      </div>
+      </div> -->
+
+
+      <form action = "#">
+
+
+      </form>
+        <lable for="item">Agregar Item</label>
+        <input id="item" type = "text" name ="item"/>
+        <input id = "button1" type = "button" value = "agregar"/>
+
+
+        <ul id = "listaDeCompras">
+
+        </ul>
+
+      <button>
+
+
+      </button>
+
+
+
+
+
+
+
     </div>
 
     <script
@@ -109,30 +135,55 @@
     ></script>
     <script>
       $(document).ready(() => {
-        var compra = [];
-        var productos = [
-          {
-            id: "item1",
-            name: "item1",
-            precio: 100,
-          },
-          {
-            id: "item2",
-            name: "item2",
-            precio: 100,
-          },
-        ];
+        // var compra = [];
+        // var productos = [
+        //   {
+        //     id: "item1",
+        //     name: "item1",
+        //     precio: 100,
+        //   },
+        //   {
+        //     id: "item2",
+        //     name: "item2",
+        //     precio: 100,
+        //   },
+        // ];
 
-        var producto;
-        $("button").click(function () {
-          // $('#boleta').append(this.id);
-          console.log(this.id)
-          var filteredProduct = Object.keys(productos).filter(function (key) {
-            return (key.id == this.id)
-          });
-          compra.push(filteredProduct); 
-          debugger
-        });
+
+        // $("button").click(function () {
+        //   var filteredProduct=""
+        //   // $('#boleta').append(this.id);
+        //   // console.log(this.id)
+        //   filteredProduct = productos.filter(function(producto){
+        //     return producto.name == this.id
+        //   })
+        //   compra.push(filteredProduct); 
+        //   debugger
+        // });
+
+        window.onload = inicial()
+
+
+
+        function inicial(){
+          button1 = document.querySelector('#button1')
+          item = document.querySelector('input[id="item"]')
+          listaDeCompras = document.querySelector("#listaDeCompras")   
+          button1.addEventListener("click",agregar)
+
+          function agregar(e){
+              e.preventDefault
+              var li = document.createElement('li')
+              li.innerHTML = item.value
+              li.addEventListener("dblclick",eliminar)
+              listaDeCompras.appendChild(li)
+          }
+
+          function eliminar(){
+            this.parentNode.removeChild(this)
+          }
+        }
+
       });
     </script>
   </body>
